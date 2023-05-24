@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* MACROSTRUTTURA */
+.container{
+position: relative;
+}
+
+.header {
+    height: 170px;
+    background-color: #009688;
+}
+
+.sfondo {
+    height: calc(100vh - 170px);
+    background-color: #DCDBD1;
+}
+
+.whatsapp {
+    min-width: 1000px;
+    min-height: 600px;
+    margin: 40px auto;
+    background-color: aqua;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+aside {
+    width: 35%;
+    min-height: 600px;
+    background-color: yellow;
+    display: inline-block;
+}
+
+main {
+    width: 65%;
+    min-height: 600px;
+    background-color: red;
+    float: right;
+
+}
+
+
+/* ASIDE */
+
+/* sezione profilo personale */
+.profiloPersonale {
+    height: 60px;
+    background-color: #EAEAEA;  
+}
+
+.profilo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-lato-destro {
+    display: flex; 
+    align-items: center;
+}
+
+.container-img-profilo{
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.profilo img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.name-Profilo {
+    font-size: 15px;
+}
+
+.container-icons {
+    margin-right: 5px;
+}
+
+
+
+.container-icons .fa-solid {
+    padding: 3px;
+    cursor: pointer;
+    color: #B1B1B1;
+}
+
+
+/* barra notifica */
+.notification {
+    height: 70px;
+    background-color: #8EDAFC;
+    display: flex;
+    align-items: center;
+}
+
+.icona-notifica {
+    height: 50px;
+    width: 50px;
+    margin: 0 10px 0 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+}
+
+.fa-bell-slash {
+    color: #8EDAFC;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.notification span {
+    font-size: 12px;
+    
+}
+
+.notification a {
+    color: grey;
+}
+
+
+/* barra di ricerca */
+
+.barra-di-ricerca {
+    display: flex;
+    padding: 10px;
+    background-color: #FAFAFA;
+    height: 50px;
+}
+
+.lens {
+    border: 1px solid lightgray;
+    width: 20%;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.fa-magnifying-glass {
+    color: grey;
+   
+}
+
+.search input{
+    padding: 5px;
+    min-width: 265px;
+    
+}
+
+
+/* lista contatti */
+
+.lista-contatti {
+    overflow: auto;
+    min-height: 420px;
+    display: flex;
+}
+.profilo-lista-contatti{
+    height: 50px;
+    width: 50px;
+    margin: 10px 10px 10px 10px;
+    /* background-color: blue; */
+    border-radius: 50%;
+    
+}
+
+.profilo-lista-contatti img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
