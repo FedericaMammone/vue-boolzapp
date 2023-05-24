@@ -72,17 +72,19 @@
             </section>
 
             <section class="lista-contatti">
-                <div class="profilo-lista-contatti">
-                    <img v-for="(contatti, index) in contacts"
-                     :src="contacts[index].avatar" alt="">
+                <div class="container-profile" v-for="(contatti, index) in contacts>
 
-                     <span v-for="(contatti, index) in contacts"> 
-                        <strong>{{contacts[index].name}}</strong></span>
-                </div>
+                    <div>
+                        <img :src='contacts[index].avatar' alt="">
+                    </div>  
 
-                <div>
+                    
+                        <span><strong>{{contacts[index].name}}</strong></span> 
+                    
+                     
                     
                 </div>
+                
             </section>
             
         </aside>
