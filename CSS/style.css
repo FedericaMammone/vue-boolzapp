@@ -28,7 +28,7 @@ position: relative;
     min-width: 1000px;
     min-height: 600px;
     margin: 40px auto;
-    background-color: aqua;
+    background-color: white;
     position: absolute;
     top: 0;
     left: 50%;
@@ -38,14 +38,14 @@ position: relative;
 aside {
     width: 35%;
     min-height: 600px;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: inline-block;
 }
 
 main {
     width: 65%;
     min-height: 600px;
-    background-color: red;
+    background-image: url(../img/sfondo.png);
     float: right;
 
 }
@@ -78,7 +78,7 @@ main {
     margin-top: 3px;
 }
 
-.profilo img {
+.container-img-profilo img {
     height: 50px;
     width: 50px;
     object-fit: cover;
@@ -96,7 +96,7 @@ main {
 
 
 .container-icons .fa-solid {
-    padding: 3px;
+    padding: 6px;
     cursor: pointer;
     color: #B1B1B1;
 }
@@ -172,10 +172,22 @@ main {
 /* lista contatti */
 
 .lista-contatti {
-    overflow: auto;
-    min-height: 420px;
+    overflow-y: scroll;
+    max-height: 420px;
     display: flex;
+    flex-direction: column;
+    
 }
+
+.container-profile{
+    display: flex;
+    cursor: pointer;
+}
+
+.container-profile:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 .profilo-lista-contatti{
     height: 50px;
     width: 50px;
@@ -189,9 +201,81 @@ main {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+
+}
+
+.container-profile span:first-child{
+    margin-top: 10px;
+}
+
+.ultimo-mex {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* SEZIONE CHAT */
+/* barra profilo contatto chat attiva */
+
+.container-chat {
+    height: 600px;
+}
+
+.barra-profilo-chat-attiva {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    background-color: #EAEAEA;
+    border-left: 1px solid grey;
+}
+
+.container-foto-name-date {
+    display: flex;
     
 }
 
-.lista-contatti span {
-    float: left;
+.container-icon-barra {
+    margin-right: 5px;
+}
+
+.container-foto-name-date .ultimo-mex{
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.ultimo-accesso {
+    font-size: 12px;
+    color: grey;
+}
+
+/* sezione chat */
+
+
+.messaggi {
+    overflow-y:scroll;
+    height: 470px
+}
+
+
+/* sezione barra di scrittura */
+.barra-text{
+    height: 70px;
+    background-color: #EAEAEA;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.barra-text input{
+    width: 500px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 0;
+}
+
+.barra-text i{
+    font-size: 20px;
+    color: #697275;
+    cursor: pointer;
 }

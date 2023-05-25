@@ -72,14 +72,18 @@
             </section>
 
             <section class="lista-contatti">
-                <div class="container-profile" v-for="(contatti, index) in contacts>
+                <div class="container-profile" v-for="(contatti, index) in contacts">
 
-                    <div>
+                    <div class="profilo-lista-contatti">
                         <img :src='contacts[index].avatar' alt="">
                     </div>  
 
-                    
+                    <div class="ultimo-mex">
+
                         <span><strong>{{contacts[index].name}}</strong></span> 
+                        <span>gdghhhs</span>
+                    </div>
+                     
                     
                      
                     
@@ -90,7 +94,38 @@
         </aside>
         <!-- sezione destra chat -->
         
-        <main></main>
+        <main>
+            <div class="container-chat">
+                <div class="barra-profilo-chat-attiva">
+                    <div class="container-foto-name-date">
+                        <div class="container-img-profilo">
+                            <img src="img/avatar_1.png" alt="">
+                        </div>
+                        <div class="ultimo-mex">
+                            <span><strong>michele</strong></span> 
+                            <span class="ultimo-accesso">gdghhhs</span>
+                        </div>
+
+                    </div>
+
+                    <div class="container-icons">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+
+                <div class="messaggi">
+
+                </div>
+
+                <div class="barra-text">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+        </main>
     </div>
     
 
