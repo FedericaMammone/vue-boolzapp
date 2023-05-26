@@ -3,6 +3,7 @@ const {createApp} = Vue;
 createApp ({
     data(){
         return{
+            search: '',
             newMessage: '',
             finalAnswer: 'Ok',
             activeChat: 0,
@@ -175,6 +176,31 @@ createApp ({
     methods: {
         clickContact(index) {
             this.activeChat = index;
+        },
+
+        aggiungiMessaggio(){
+            if(this.newMessage != ''){
+                this.contacts[this.activeChat].messages.push(
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: this.newMessage,
+                        status: 'sent'
+                    }
+                )
+            }
+            this.newMessage = '';
         }
-    }
+    },
+    computed: {
+        filteredContacts() {
+            let filtered = this.contacts
+        
+            if (this.searchValue != '' && this.searchValue)
+            contact = filtered.filter((item) => {
+                return item.name
+                  .toUpperCase()
+                  .includes(this.searchValue.toUpperCase())
+              })
+            }
+        }
 }).mount('#app');

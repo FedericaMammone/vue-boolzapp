@@ -65,14 +65,14 @@
                     </div>
 
                     <div class="search">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchValue">
                     </div>
                 </div>
 
             </section>
 
             <section class="lista-contatti">
-                <div class="container-profile" v-for="(contatti, index) in contacts" @click="clickContact(index)">
+                <div class="container-profile" v-for="(contatti, index) in contacts" :key="index" @click="clickContact(index)" :class="activeChat === index ? 'chatSelezionata' : '' ">
 
                     <div class="profilo-lista-contatti">
                         <img :src='contacts[index].avatar' alt="">
@@ -116,23 +116,18 @@
                     </div>
                 </div>
 
-                <div class="messaggi">
-                    <div class="mex inviato">
+                <div class="messaggi" >
+                    <div class="mex " v-for="(contattoAttivo, index) in contacts[activeChat].messages" :class="contattoAttivo.status === 'sent' ? 'inviato active' : 'ricevuto active' ">
                         <div class="text">
-                            <span><strong> ciaooooooo </strong> </span>
+                            <span><strong> {{contattoAttivo.message}} </strong> </span>
                             <span class="ora">oraaa</span>
                         </div>
-                        
-                    </div>
-
-                    <div class="mex ricevuto">
-
                     </div>
                 </div>
 
                 <div class="barra-text">
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" @keyup.enter="aggiungiMessaggio" v-model="newMessage">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
