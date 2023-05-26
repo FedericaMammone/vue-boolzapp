@@ -72,7 +72,7 @@
             </section>
 
             <section class="lista-contatti">
-                <div class="container-profile" v-for="(contatti, index) in contacts">
+                <div class="container-profile" v-for="(contatti, index) in contacts" @click="clickContact(index)">
 
                     <div class="profilo-lista-contatti">
                         <img :src='contacts[index].avatar' alt="">
@@ -81,7 +81,7 @@
                     <div class="ultimo-mex">
 
                         <span><strong>{{contacts[index].name}}</strong></span> 
-                        <span>gdghhhs</span>
+                        <span>Ultimo accesso</span>
                     </div>
                      
                     
@@ -97,13 +97,14 @@
         <main>
             <div class="container-chat">
                 <div class="barra-profilo-chat-attiva">
-                    <div class="container-foto-name-date">
+                    <div class="container-foto-name-date" 
+                    v-for="(contattoAttivo, index) in contacts" :class="activeChat === index ? 'active' : '' ">
                         <div class="container-img-profilo">
-                            <img src="img/avatar_1.png" alt="">
+                            <img :src='contacts[activeChat].avatar' alt="">
                         </div>
                         <div class="ultimo-mex">
-                            <span><strong>michele</strong></span> 
-                            <span class="ultimo-accesso">gdghhhs</span>
+                            <span><strong>{{contacts[activeChat].name}}</strong></span> 
+                            <span class="ultimo-accesso">Ultimo accesso</span>
                         </div>
 
                     </div>
@@ -116,7 +117,17 @@
                 </div>
 
                 <div class="messaggi">
+                    <div class="mex inviato">
+                        <div class="text">
+                            <span><strong> ciaooooooo </strong> </span>
+                            <span class="ora">oraaa</span>
+                        </div>
+                        
+                    </div>
 
+                    <div class="mex ricevuto">
+
+                    </div>
                 </div>
 
                 <div class="barra-text">

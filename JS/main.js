@@ -4,8 +4,8 @@ createApp ({
     data(){
         return{
             newMessage: '',
-            finalAnswer: 'ok',
-            activeContact: 0,
+            finalAnswer: 'Ok',
+            activeChat: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -170,6 +170,11 @@ createApp ({
                 }
             ]
 
+        }
+    },
+    methods: {
+        clickContact(index) {
+            this.activeChat = index;
         }
     }
 }).mount('#app');
